@@ -1,3 +1,4 @@
+#github.com/NightfallGT
 import tkinter as tk
 from tkinter import filedialog
 from tkinter.messagebox import showerror, showwarning, showinfo
