@@ -24,6 +24,7 @@ This installs pyinstaller automatically for you.
 - If it doesn't work just type in cmd 
 ```
 pip install pyinstaller
+pip install pillow
 ```
 
 #### Double click on main.py 
