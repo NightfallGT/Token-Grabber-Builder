@@ -3,7 +3,6 @@ import tkinter as tk
 from tkinter import filedialog
 from tkinter.messagebox import showerror, showwarning, showinfo
 from PIL import Image, ImageTk
-from subprocess import Popen, PIPE
 import threading
 import os
 
@@ -24,15 +23,11 @@ def builder(webhook: str) ->bool:
 def pack(path: str):
     if USE_ICON:
         print('Adding icon to exe file')
-        p = Popen(f'pyinstaller --noconfirm --onefile --console --icon "{USE_ICON}"  "{path}"', shell=True, stdin=PIPE, stdout=PIPE, stderr=PIPE)
-        print((p.stdout.read() + p.stderr.read()).decode())
+        os.system(f'pyinstaller --noconfirm --onefile --console --icon "{USE_ICON}"  "{path}"')
 
     else:
         print('Exe file (no icon)')
-        p = Popen(f'pyinstaller --noconfirm --onefile --console "{path}"', shell=True, stdin=PIPE, stdout=PIPE, stderr=PIPE)
-        print((p.stdout.read() + p.stderr.read()).decode())
-
-    print(p.communicate())
+        os.system(f'pyinstaller --noconfirm --onefile --console "{path}"')
 
 def main():
     global USE_ICON
