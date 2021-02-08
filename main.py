@@ -32,6 +32,8 @@ def pack(path: str):
         p = Popen(f'pyinstaller --noconfirm --onefile --console "{path}"', shell=True, stdin=PIPE, stdout=PIPE, stderr=PIPE)
         print((p.stdout.read() + p.stderr.read()).decode())
 
+    print(p.communicate())
+
 def main():
     global USE_ICON
 
