@@ -1,9 +1,11 @@
-# Token-Grabber-Builder
-Make Discord token grabbers that are in .exe format. 
-- Converts your .py file to .exe format with an icon
+# Token-Grabber-Builder | PROOF OF CONCEPT
+a GUI demonstrating how Discord token grabbers in .py can be created and converted to .exe format. 
+
 
 ## About
-This tool should only be used for educational purposes only. Do not use this on others maliciously. 
+This tool should only be used for educational purposes only. Do not use this on others maliciously. This program demonstrates, in an easy GUI format, how token grabbers can be created and compiled to exe from a .py file. When this tool is used, it makes it easier to understand the process and methods of how the output .exe file searches for Discord tokens and the type of information it extracts from a user.
+
+After the usage of this tool, you will learn the type of information a "Discord token grabber" extracts from a victim and some preventions to avoid this from happening. (such as why you should not run random .py/ .exe files)
 
 ## Picture
 ![Picture1](https://i.ibb.co/BL0tJxk/Screenshot-45.png)
@@ -22,6 +24,7 @@ This installs pyinstaller automatically for you.
 - If it doesn't work just type in cmd 
 ```
 pip install pyinstaller
+pip install pillow
 ```
 
 #### Double click on main.py 
@@ -41,8 +44,9 @@ Copy the webhook url and paste it in the program.
 You can also add icons to your exe file 
 - Click on file > add icon 
 - Then choose your icon file. It should be an .ico file
-- After that, click build then you're done!
+- After that, click build then you're done
 
-Once you're done building the file, the output should be in the /dist folder. You can rename it to whatever you want 
+Once you're done building the file, the output should be in the /dist folder. You can rename it to whatever you want.
+
 
 
