@@ -3,7 +3,8 @@ a GUI demonstrating how Discord token grabbers in .py can be created and convert
 
 ## Updates
 This token grabber builder requires Python to be installed in your pc. 
-If you do not want to use Python, an exe version is available.
+If you do not want to use Python, an exe version is available. It is a different builder which was written in C#.
+
 [Download Exe Version](https://github.com/NightfallGT/Token-Grabber-Builder-Exe/releases/tag/v1.0)
 
 
@@ -12,7 +13,7 @@ This tool should only be used for educational purposes only. Do not use this on 
 
 After the usage of this tool, you will learn the type of information a "Discord token grabber" extracts from a victim and some preventions to avoid this from happening. (such as why you should not run random .py/ .exe files)
 
-## Picture
+## Preview
 ![Picture1](https://i.ibb.co/BL0tJxk/Screenshot-45.png)
 
 
